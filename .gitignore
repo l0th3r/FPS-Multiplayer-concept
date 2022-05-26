@@ -73,3 +73,4 @@ crashlytics-build.properties
 
 # Mirror Exemples
 /[Aa]ssets/Mirror/Examples
+/[Aa]ssets/Mirror/Examples.meta
