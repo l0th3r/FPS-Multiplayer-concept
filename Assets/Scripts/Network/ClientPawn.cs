@@ -7,7 +7,8 @@ public class ClientPawn : NetworkBehaviour
 {
     [SerializeField] private NetworkIdentity identity;
 
-    [SerializeField] private GameObject localElements, remoteElements;
+    [SerializeField]
+    public GameObject localElements, remoteElements, serverElements, sharedElements;
 
     private void Start()
     {

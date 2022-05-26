@@ -16,6 +16,18 @@ public class NetManager : NetworkManager
 
         player.name = $"{playerPrefab.name} [id={conn.connectionId}]";
 
+        // Enable on server only
+        //DisableNonServerElementsOnClient(player.GetComponent<ClientPawn>());
+        
         NetworkServer.AddPlayerForConnection(conn, player);
     }
+
+
+    private void DisableNonServerElementsOnClient(ClientPawn cpawn)
+    {
+        cpawn.localElements.SetActive(false);
+        cpawn.remoteElements.SetActive(false);
+        cpawn.sharedElements.SetActive(false);
+    }
+
 }
