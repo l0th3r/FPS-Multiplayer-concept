@@ -5,6 +5,19 @@ using Mirror;
 
 public class ClientPawn : NetworkBehaviour
 {
-    [SyncVar]
-    private List<ClientPawn> m_pawns;
+    [SerializeField] private NetworkIdentity identity;
+
+    [SerializeField] private GameObject localElements, remoteElements;
+
+    private void Start()
+    {
+        if(isLocalPlayer)
+        {
+            remoteElements.SetActive(false);
+        }
+        else
+        {
+            localElements.SetActive(false);
+        }
+    }
 }
